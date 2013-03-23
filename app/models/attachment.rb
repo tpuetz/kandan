@@ -17,7 +17,6 @@ class Attachment < ActiveRecord::Base
 =end
 
   has_attached_file :file
-  attr_accessible :file
 
   def url
     file.to_s
