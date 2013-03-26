@@ -73,6 +73,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '~> 1.0.0.RC1'
   gem 'jasmine', '~> 1.3.1'
 end

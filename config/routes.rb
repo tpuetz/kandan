@@ -2,7 +2,8 @@ Kandan::Application.routes.draw do
 
   devise_for :users,
   :controllers => {
-    :sessions => "sessions"
+    :sessions => "sessions",
+    :registrations => "registrations"
   }
 
   get "pages/approval"
@@ -10,7 +11,6 @@ Kandan::Application.routes.draw do
   get "pages/suspended"
 
   root :to => "main#index"
-  devise_for :users
 
   get '/search' => "main#search"
 
