@@ -17,7 +17,7 @@ class Kandan.Plugins.UserList
 
     for user in Kandan.Data.ActiveUsers.all()
       displayName   = null
-      displayName   = user.username # Defaults to username
+      displayName   = user.full_name # Defaults to username
       displayName ||= user.email # Revert to user email address if that's all we have
       isAdmin       = user.is_admin
 
