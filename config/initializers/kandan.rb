@@ -6,7 +6,7 @@ module Kandan
   def self.devise_modules
     standard = [:database_authenticatable, :registerable,
                 :recoverable, :rememberable, :trackable, :validatable,
-                :token_authenticatable]
+                :token_authenticatable, :omniauthable, :omniauth_providers => [:google_oauth2]]
   end
 end
 

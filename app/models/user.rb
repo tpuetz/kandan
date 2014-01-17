@@ -121,5 +121,27 @@ class User < ActiveRecord::Base
     end
   end
 
+def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
+    data = access_token.info
+    if user = User.where(:email => data["email"]).first
+      return user
+    else
+      user = User.create(
+           email: data["email"],
+           password: Devise.friendly_token[0,20],
+           first_name: data['first_name'],
+           last_name: data['last_name'],
+    end
+    user
+end
+
+def self.new_with_session(params, session)
+  super.tap do |user|
+    if data = session['devise.googleapps_data'] && session['devise.googleapps_data']['user_info']
+      user.email = data['email']
+    end
+  end
+end
+
 end
 
