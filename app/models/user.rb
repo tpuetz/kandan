@@ -14,10 +14,10 @@ class User < ActiveRecord::Base
 
   after_create :ensure_at_least_one_admin
   after_destroy :ensure_at_least_one_admin
-  
+
   validates :username, :presence => true, :uniqueness => true
   validate :check_external_avatar
-  
+
   # Kandan.devise_modules is defined in config/initializers/kandan.rb
   devise devise *Kandan.devise_modules
 
@@ -100,7 +100,7 @@ class User < ActiveRecord::Base
     end
 
     # Check for file size
-    Net::HTTP.start(uri.host, uri.port, 
+    Net::HTTP.start(uri.host, uri.port,
                     :use_ssl => uri.scheme == 'https') do |http|
       begin
         response = http.request_head(uri.to_s)
@@ -122,3 +122,4 @@ class User < ActiveRecord::Base
   end
 
 end
+

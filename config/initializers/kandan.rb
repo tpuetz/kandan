@@ -9,3 +9,4 @@ module Kandan
                 :token_authenticatable]
   end
 end
+

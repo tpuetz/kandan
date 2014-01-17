@@ -12,6 +12,7 @@ gem 'pg'
 # Auth gems
 gem 'devise'
 gem 'cancan'
+gem 'omniauth-google-oauth2'
 
 # Server/transport gems
 gem 'thin'
